@@ -1,5 +1,5 @@
 from data import get_NIPS17_loader
-from BigModels import InstructBlipVisionModel
+from surrogates import InstructBlipVisionModel
 from attacks import SpectrumSimulationAttack
 from utils.ImageHandling import save_multi_images
 

@@ -11,15 +11,12 @@ Multimodal Large Language Models (MLLMs) that integrate text and other modalitie
 By attacking white-box surrogate vision encoders or MLLMs, the generated adversarial examples can mislead Bard to output wrong image descriptions with a 22% success rate based solely on the transferability. We show that the adversarial examples can also attack other MLLMs, e.g., 26% attack success rate against Bing Chat and 86\% attack success rate against ERNIE bot. Moreover, we identify two defense mechanisms of Bard, including face detection and toxicity detection of images. We design corresponding attacks to evade these defenses, demonstrating that the current defenses of Bard are also vulnerable. We hope this work can deepen our understanding on the robustness of MLLMs and facilitate future research on defenses. 
 
 
-We provide codes for 4 experiments.
+We provide codes for 3 experiments.
 
-1. attack_img_encoder_misdescription.py: Image embedding attack against Bard's image description.
+1. attack_img_encoder_misdescription.py: Image embedding attack against Bard's image description. You can also use this code to attack NSFW detectors by changing the training data.
 
-2. attack_vlm_misclassify.py: Text description attack against Bard's image description.
+2. attack_vlm_misclassify.py: Text description attack against Bard's image description. 
 
-3. attack_img_encoder_nsfw.py: Attack on toxic detection.
-
-4. attack_bomb.py: This one is not included in our paper. This is to let the MLLM output "bomb bomb...".
 
 
 ## Getting Started
@@ -28,26 +25,17 @@ We provide codes for 4 experiments.
 
 ### Installation
 
+The installation of this project is extremely easy. You only need to:
+
 - Configurate the environment, vicuna weights, following the instruction in https://github.com/Vision-CAIR/MiniGPT-4    
-- Prepare NFSW dataset. Put your NFSW images into "./resources/NSFW/ger_porn" folder (Refer to attack_img_encoder_nsfw.py for detail). 
-- Prepare NIPS17 dataset. Download NIPS17 dataset from "https://www.kaggle.com/datasets/google-brain/nips-2017-adversarial-learning-development-set". Unzip it into "./resources/NIPS17". (Refer to ./data/NIPS17.py for more detail)
 
+and run the following codes
 
-### Run the code
-
-Run:
-```
-CUDA_VISIBLE_DEVICES=0 attack_bomb.py
-```
-or
+- Image embedding attack against Bard's image description. You can also use this code to attack NSFW detectors by changing the training data.
 ```
 CUDA_VISIBLE_DEVICES=0,1,2 attack_img_encoder_misdescription.py
 ```
-or
-```
-CUDA_VISIBLE_DEVICES=0,1,2 attack_img_encoder_nsfw.py
-```
-or
+- Text description attack against Bard's image description. 
 ```
 CUDA_VISIBLE_DEVICES=0 attack_vlm_misclassify.py
 ```
@@ -66,12 +54,44 @@ CUDA_VISIBLE_DEVICES=0 attack_vlm_misclassify.py
 
 - We achieve 36\% attack success rate against Bard's toxic detector.
 
+- Several demos:
 
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/mis_1.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/mis_2.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/toxic_1.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/toxic_2.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/ffhq_1.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/ffhq_2.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/weixin1.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/weixin2.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/bing1.jpg)
+
+![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/bing2.jpg)
 
 
 # Acknowledgement
 
 ---
+
+If you're using our codes or algorithms in your research or applications, please cite using this BibTeX:
+
+```
+@article{dong2023robust,
+  title={How Robust is Google's Bard to Adversarial Image Attacks?},
+  author={Dong, Yinpeng and Chen, Huanran and Chen, Jiawei and Fang, Zhengwei and Yang, Xiao and Zhang, Yichi and Tian, Yu and Su, Hang and Zhu, Jun},
+  journal={arXiv preprint arXiv:2309.11751},
+  year={2023}
+}
+```
+
 
 Our code is implemented based on [**MiniGPT4**](https://github.com/Vision-CAIR/MiniGPT-4) and [**AdversarialAttacks**](https://github.com/huanranchen/AdversarialAttacks).  Thanks them for supporting! 
 

@@ -1,5 +1,5 @@
 from data import get_NIPS17_loader
-from BigModels import get_gpt4_image_model, Blip2VisionModel
+from surrogates import get_gpt4_image_model, Blip2VisionModel
 from attacks import SpectrumSimulationAttack
 from utils.ImageHandling import save_multi_images
 

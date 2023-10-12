@@ -1,18 +1,19 @@
 import torch
-import os
-from data import get_NIPS17_loader
-from BigModels import (
+from surrogates import (
     BlipFeatureExtractor,
     ClipFeatureExtractor,
     EnsembleFeatureLoss,
     VisionTransformerFeatureExtractor,
 )
-from utils import save_image, save_list_images
-from attacks import SpectrumSimulationAttack, SSA_CommonWeakness
+from utils import get_list_image, save_list_images
 from tqdm import tqdm
+from attacks import SpectrumSimulationAttack, SSA_CommonWeakness
+from torchvision import transforms
+import os
 
-
-loader = get_NIPS17_loader(batch_size=4)
+images = get_list_image("./dataset/NIPS17")
+resizer = transforms.Resize((224, 224))
+images = [resizer(i).unsqueeze(0) for i in images]
 
 blip = BlipFeatureExtractor().eval().cuda().requires_grad_(False)
 clip = ClipFeatureExtractor().eval().cuda().requires_grad_(False)
@@ -42,9 +43,9 @@ dir = "./attack_img_encoder_misdescription/"
 if not os.path.exists(dir):
     os.mkdir(dir)
 id = 0
-for i, (x, y) in enumerate(tqdm(loader)):
+for i, x in enumerate(tqdm(images)):
     x = x.cuda()
     ssa_cw_loss.set_ground_truth(x)
     adv_x = attacker(x, None)
     save_list_images(adv_x, dir, begin_id=id)
-    id += y.shape[0]
+    id += x.shape[0]
