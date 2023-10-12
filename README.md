@@ -1,6 +1,10 @@
 # Attack-Bard
 
+## Demos
 
+---
+
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/VQA.png)
 
 
 ## Introduction
@@ -54,27 +58,27 @@ CUDA_VISIBLE_DEVICES=0 attack_vlm_misclassify.py
 
 - We achieve 36\% attack success rate against Bard's toxic detector.
 
-- Several demos:
+  - Several demos:
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/mis_1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/mis_1.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/mis_2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/mis_2.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/toxic_1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/toxic_1.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/toxic_2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/toxic_2.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/ffhq_1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/ffhq_1.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/ffhq_2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/ffhq_2.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/weixin1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin1.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/weixin2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin2.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/bing1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing1.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/demos/bing2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing2.jpg)
 
 
 # Acknowledgement
