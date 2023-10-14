@@ -93,9 +93,9 @@ We also provide adversarial examples crafted by image embedding attack in [ssa-c
 
 - Demos on ERNIE Bot
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin1.png)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/wenxin1.png)
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin2.png)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/wenxin2.png)
 
 - Demos on Bing Chat
 
