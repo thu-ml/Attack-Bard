@@ -44,8 +44,13 @@ CUDA_VISIBLE_DEVICES=0,1,2 attack_img_encoder_misdescription.py
 CUDA_VISIBLE_DEVICES=0 attack_vlm_misclassify.py
 ```
 
+We also provide adversarial examples crafted by image embedding attack in [ssa-cwa-200](https://github.com/thu-ml/Attack-Bard/tree/main/dataset/ssa-cwa-200)
+
+
 
 ### Results
+
+
 
 - Attack success rate of different methods against Bard's image description.
 
@@ -58,27 +63,50 @@ CUDA_VISIBLE_DEVICES=0 attack_vlm_misclassify.py
 
 - We achieve 36\% attack success rate against Bard's toxic detector.
 
-  - Several demos:
+- Attack Success Rate against Different Models
+
+|           | Attack Success Rate |
+|-----------|:-------------------:|
+| GPT-4     |        45\%         |    
+| Bing Chat |        26\%         |   
+ | ERNIE Bot |        86\%         |   
+
+
+- Demos on GPT-4
+
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/30-results.png)
+
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/41-results.png)
+
+- Demos on Google's Bard
 
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/mis_1.jpg)
 
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/mis_2.jpg)
 
+- Demos on Bard's toxic detector
+
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/toxic_1.jpg)
 
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/toxic_2.jpg)
+
+- Demos on Bard's face detector
 
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/ffhq_1.jpg)
 
 ![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/ffhq_2.jpg)
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin1.jpg)
+- Demos on ERNIE Bot
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin2.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin1.png)
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing1.jpg)
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/weixin2.png)
 
-![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing2.jpg)
+- Demos on Bing Chat
+
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing1.png)
+
+![image](https://github.com/thu-ml/Attack-Bard/blob/main/dataset/demos/bing2.png)
 
 
 # Acknowledgement
