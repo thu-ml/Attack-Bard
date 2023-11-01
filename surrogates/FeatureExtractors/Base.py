@@ -43,7 +43,7 @@ class EnsembleFeatureLoss(nn.Module):
     def set_ground_truth(self, x: Tensor):
         self.ground_truth.clear()
         for model in self.extractors:
-            self.ground_truth.append(model(x))
+            self.ground_truth.append(model(x.to(model.device)))
         self.count = 0
 
     def __call__(self, feature: Tensor, y: Any = None) -> Tensor:

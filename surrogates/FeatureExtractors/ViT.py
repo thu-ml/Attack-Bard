@@ -29,7 +29,7 @@ class VisionTransformerFeatureExtractor(BaseFeatureExtractor):
         # inputs = self.processor(images=x, return_tensors="pt")
         inputs = dict(pixel_values=self.normalizer(x))
         # print(inputs['pixel_values'].shape)
-        inputs["pixel_values"] = inputs["pixel_values"].cuda()
+        inputs["pixel_values"] = inputs["pixel_values"].to(self.device)
         outputs = self.model(**inputs)
         pooled_output = outputs.pooler_output
         # print(f'Vit {pooled_output.shape}')

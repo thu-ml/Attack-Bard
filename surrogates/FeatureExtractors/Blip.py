@@ -36,7 +36,7 @@ class BlipFeatureExtractor(BaseFeatureExtractor):
         x = torch.clamp(x, min=0, max=1)
         # inputs = self.processor(images=show_image(x), return_tensors="pt").to(self.device)
         inputs = dict(pixel_values=self.normalizer(x))
-        inputs["pixel_values"] = inputs["pixel_values"].cuda()
+        inputs["pixel_values"] = inputs["pixel_values"].to(self.device)
         # print(torch.mean((inputs.pixel_values - self.normalizer(x)) ** 2),
         #       inputs.pixel_values.shape, self.normalizer(x).shape)
         # outputs = self.model.get_image_features(**inputs, output_attentions=True)
